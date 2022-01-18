@@ -9,15 +9,17 @@
   --button-primary-hover: #188ce8;
   --footer-contacts: rgba(255, 255, 255, 0.6);
   --header-logo: #000000;
+  --line-color: #ececec;
 }
 
 body {
-  margin: 0;
   background-color: var(--text-color-white);
   color: var(--secondary-text-color);
 
   font-family: Roboto, sans-serif;
   letter-spacing: 0.03em;
+
+  margin: 0;
 }
 
 h1,
@@ -38,13 +40,14 @@ img {
   height: auto;
 }
 
-/* List styles */
-
-.list {
+ul {
   list-style: none;
-  text-decoration: none;
   padding: 0;
   margin: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* Section */
@@ -67,7 +70,7 @@ img {
 /* Header */
 
 .header {
-  border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid var(--line-color);
 }
 
 .logo {
@@ -77,7 +80,6 @@ img {
   font-weight: 700;
   font-size: 26px;
   line-height: 1.2;
-  text-decoration: none;
 }
 
 .header-logo-part {
@@ -92,13 +94,15 @@ img {
 }
 
 .site-nav {
-  display: flex;
   margin-left: 93px;
 }
 
 .site-nav-item:not(:last-child) {
   margin-right: 50px;
-  /* background-color: tomato; */
+}
+
+.site-list {
+  display: flex;
 }
 
 .site-nav-link {
@@ -112,7 +116,6 @@ img {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  text-decoration: none;
 }
 
 .site-nav-link:hover,
@@ -142,7 +145,6 @@ img {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  text-decoration: none;
 }
 
 .header-contacts:hover,
@@ -157,11 +159,13 @@ img {
 /* Hero */
 
 .hero {
+  background-color: var(--footer-background-color);
+
   text-align: center;
+  padding: 200px 0;
 }
 
 .hero-title {
-  background-color: var(--footer-background-color);
   color: var(--text-color-white);
 
   font-weight: 900;
@@ -186,7 +190,6 @@ img {
 .button.primary {
   padding: 10px 32px;
   margin-top: 30px;
-  margin-bottom: 200px;
 
   background-color: var(--accent-color);
   color: var(--text-color-white);
@@ -210,6 +213,7 @@ img {
   font-weight: 500;
   line-height: 1.62;
   letter-spacing: 0.03em;
+  border: transparent;
 }
 
 .button.secondary:hover,
@@ -224,15 +228,19 @@ img {
 
 /* Features */
 
-.features {
-  display: flex;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
 }
 
 .features-list {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-right: 30px;
 }
 
 .features-item {
@@ -251,7 +259,7 @@ img {
   line-height: 1.14;
   text-transform: uppercase;
 
-  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .features-text {
@@ -316,10 +324,9 @@ img {
 }
 
 .team-item-content {
-  justify-content: center;
   text-align: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   font-size: 16px;
 }
 
@@ -337,20 +344,23 @@ img {
 .team-name {
   font-weight: 500;
   line-height: 1.2;
+  font-size: 16px;
+
+  margin-bottom: 10px;
 }
 
 .team-profession {
   color: var(--secondary-text-color);
+
   line-height: 1.9;
+  font-size: 16px;
 }
 
 /* Footer */
 
 .footer {
   background-color: var(--footer-background-color);
-}
 
-.footer-info {
   padding-top: 60px;
   padding-bottom: 60px;
 }
@@ -368,15 +378,11 @@ img {
 .footer-address {
   color: var(--text-color-white);
 
-  text-decoration: none;
-
   margin-top: 20px;
 }
 
 .footer-contacts {
   color: var(--footer-contacts);
-
-  text-decoration: none;
 }
 
 .footer-contacts:hover,
@@ -388,8 +394,8 @@ img {
   color: var(--accent-color);
 }
 
-.footer-item:not(first-child) {
-  padding-top: 9px;
+.footer-item:not(:first-child) {
+  margin-top: 9px;
 }
 
 /* Portfolio */
@@ -400,21 +406,18 @@ img {
 }
 
 .portfolio-filters {
-  text-decoration: none;
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
-.portfolio-item {
+.portfolio-item:not(:last-child) {
   margin-right: 8px;
-  margin-bottom: 34px;
 }
 
-/* CARD SET */
+/* Card Set */
 
 .card-set {
-  padding: 0;
-  margin: 0;
   margin-top: -30px;
   margin-left: -30px;
   display: flex;
@@ -426,10 +429,6 @@ img {
 
   margin-left: 30px;
   margin-top: 30px;
-
-  border-bottom: 1px solid #eeeeee;
-  border-left: 1px solid #eeeeee;
-  border-right: 1px solid #eeeeee;
 }
 
 .card-title {
@@ -443,16 +442,17 @@ img {
 }
 
 .card-content {
-  margin: 20px 24px;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--line-color);
+  border-left: 1px solid var(--line-color);
+  border-right: 1px solid var(--line-color);
 }
+
+/* Projects */
 
 .project-kind {
   color: var(--secondary-text-color);
 
   font-size: 16px;
   line-height: 1.87;
-}
-
-.project-link {
-  text-decoration: none;
 }
