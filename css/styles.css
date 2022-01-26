@@ -183,6 +183,7 @@ a {
   text-align: center;
   font-size: 16px;
   align-items: center;
+  border: transparent;
   border-radius: 4px;
   display: inline-block;
 }
@@ -213,7 +214,6 @@ a {
   font-weight: 500;
   line-height: 1.62;
   letter-spacing: 0.03em;
-  border: transparent;
 }
 
 .button.secondary:hover,
